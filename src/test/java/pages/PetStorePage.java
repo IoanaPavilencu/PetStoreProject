@@ -12,7 +12,7 @@ public class PetStorePage extends BasePage {
         super(driver);
     }
 
-    @FindBy(id = "icon icon-user")
+    @FindBy(xpath = "//*[name()='svg' and contains(@class, 'icon-user')]")
     private WebElement userButton;
 
     @FindBy(id = "customer_register_link")
@@ -33,16 +33,22 @@ public class PetStorePage extends BasePage {
     @FindBy(xpath = "//input[@value='Create']")
     private WebElement createButton;
 
-    public void createUser(RegisterLoginObject testData1) {
+    public void createUser(RegisterLoginObject testData) {
+        elementMethods.clickElement(userButton);
         LoggerUtility.info("Create account for a new user.");
-        elementMethods.fillElement(firstNameElement, testData1.getFirstNameValue());
-        LoggerUtility.info(testData1.getFirstNameValue() + " is inserted with success in the 'First Name' field.");
-        elementMethods.fillElement(lastNameElement, testData1.getLastNameValue());
-        LoggerUtility.info(testData1.getLastNameValue() + " is inserted with success in the 'Last Name' field. ");
-        elementMethods.fillElement(emailElement, testData1.getEmailValue());
-        LoggerUtility.info(testData1.getEmailValue() + " is inserted with success in the 'Email' field. ");
-        elementMethods.fillElement(passwordElement, testData1.getPasswordValue());
-        LoggerUtility.info("The password '" + testData1.getPasswordValue() + "' is inserted with succes.");
+        elementMethods.clickElement(createAccountButton);
+        elementMethods.clickElement(firstNameElement);
+        elementMethods.fillElement(firstNameElement, testData.getFirstNameValue());
+        LoggerUtility.info(testData.getFirstNameValue() + " is inserted with success in the 'First Name' field.");
+        elementMethods.clickElement(lastNameElement);
+        elementMethods.fillElement(lastNameElement, testData.getLastNameValue());
+        LoggerUtility.info(testData.getLastNameValue() + " is inserted with success in the 'Last Name' field. ");
+        elementMethods.clickElement(emailElement);
+        elementMethods.fillElement(emailElement, testData.getEmailValue());
+        LoggerUtility.info(testData.getEmailValue() + " is inserted with success in the 'Email' field. ");
+        elementMethods.clickElement(passwordElement);
+        elementMethods.fillElement(passwordElement, testData.getPasswordValue());
+        LoggerUtility.info("The password '" + testData.getPasswordValue() + "' is inserted with succes.");
         elementMethods.clickElement(createButton);
         LoggerUtility.info("A new user has successfully created an account.");
 

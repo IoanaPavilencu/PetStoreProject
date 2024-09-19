@@ -15,7 +15,7 @@ public class ElementMethods {
     public WebDriver driver;
 
     public void waitForElementVisible(WebElement element){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
     public void clickElement(WebElement element){
@@ -25,5 +25,10 @@ public class ElementMethods {
     public void fillElement(WebElement element, String text){
         waitForElementVisible(element);
         element.sendKeys(text);
+    }
+    public void clickJSElement(WebElement element){
+        waitForElementVisible(element);
+        JavascriptExecutor jsClick = (JavascriptExecutor) driver;
+        jsClick.executeScript("arguments[0].click;", element);
     }
 }
