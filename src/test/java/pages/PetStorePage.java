@@ -37,18 +37,23 @@ public class PetStorePage extends BasePage {
         elementMethods.clickElement(userButton);
         LoggerUtility.info("Create account for a new user.");
         elementMethods.clickElement(createAccountButton);
+        LoggerUtility.info("The new user wants to create an account.");
         elementMethods.clickElement(firstNameElement);
+        LoggerUtility.info("The new user clicked on 'First Name' field.");
         elementMethods.fillElement(firstNameElement, testData.getFirstNameValue());
         LoggerUtility.info(testData.getFirstNameValue() + " is inserted with success in the 'First Name' field.");
         elementMethods.clickElement(lastNameElement);
+        LoggerUtility.info("The new user clicked on 'Last Name' field.");
         elementMethods.fillElement(lastNameElement, testData.getLastNameValue());
         LoggerUtility.info(testData.getLastNameValue() + " is inserted with success in the 'Last Name' field. ");
         elementMethods.clickElement(emailElement);
+        LoggerUtility.info("The new user clicked on 'Email' field.");
         elementMethods.fillElement(emailElement, testData.getEmailValue());
         LoggerUtility.info(testData.getEmailValue() + " is inserted with success in the 'Email' field. ");
         elementMethods.clickElement(passwordElement);
+        LoggerUtility.info("The new user clicked on 'Password' field.");
         elementMethods.fillElement(passwordElement, testData.getPasswordValue());
-        LoggerUtility.info("The password '" + testData.getPasswordValue() + "' is inserted with succes.");
+        LoggerUtility.info("The password '" + testData.getPasswordValue() + "' is inserted with success.");
         elementMethods.clickElement(createButton);
         LoggerUtility.info("A new user has successfully created an account.");
 

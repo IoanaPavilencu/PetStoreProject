@@ -5,7 +5,6 @@ import helperMethods.PageMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.lang.model.element.Element;
 
 public class BasePage {
 
